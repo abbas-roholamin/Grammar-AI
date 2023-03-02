@@ -4,6 +4,7 @@ import { FaGithub, FaPaypal } from "react-icons/fa";
 import Container from "./Container";
 
 import HeroImg from "@/public/hero image.png";
+import GrammarAI from "@/public/grammer ai.gif";
 import Image from "next/image";
 
 type Props = {
@@ -37,20 +38,30 @@ export default function Hero({
           <FaPaypal /> PayPal
         </a>
       </div>
-      <h1 className="mb-4 text-4xl font-black text-center md:text-6xl">
+      {/* <h1 className="mb-4 text-4xl font-black text-center md:text-6xl">
         Grammar AI
-      </h1>
-      <p className="text-base font-medium text-center opacity-75 md:text-xl">
-        This application makes it easy for users to improve their writing and
-        avoid common mistakes.
-      </p>
+      </h1> */}
       <Image
-        src={HeroImg}
-        className="my-12 w-96"
+        src={GrammarAI}
+        className="w-[600px]"
         width={600}
         height={600}
         alt=""
       />
+      <p className="text-base font-medium text-center opacity-75 md:text-xl">
+        This application makes it easy for users to improve their writing and
+        avoid common mistakes.
+      </p>
+      <div className="relative overflow-hidden">
+        <Image
+          src={HeroImg}
+          className="my-12 w-96"
+          width={600}
+          height={600}
+          alt=""
+        />
+        <div id="light"></div>
+      </div>
       <textarea
         className="w-full p-4 border-2 border-gray-500 rounded-lg outline-none focus:border-black md:w-4/5 lg:w-1/2"
         value={promptValue}

@@ -51,27 +51,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`${inter.className} flex flex-col items-center w-full max-w-[1200px] mx-auto`}
+        className={`${inter.className} flex flex-col items-center w-full max-w-[1200px] mx-auto p-4`}
       >
         <h1 className="font-black text-6xl text-center mt-24 mb-4">
           Grammar AI
         </h1>
-        <p className="mb-24 text-xl font-medium opacity-75">
+        <p className="mb-24 text-base md:text-xl font-medium opacity-75 text-center">
           This application makes it easy for users to improve their writing and
           avoid common mistakes.
         </p>
         <textarea
-          className="border-2 outline-none border-gray-500 focus:border-black rounded-lg p-4 w-1/2"
+          className="border-2 outline-none border-gray-500 focus:border-black rounded-lg p-4 w-full md:w-4/5 lg:w-1/2"
           value={promptValue}
           onChange={(e) => setPromptValue(e.target.value)}
           placeholder="e.g: I okay am"
         />
-        <p className="w-1/2 text-sm opacity-70 mt-1">
+        <p className="w-full md:w-4/5 lg:w-1/2 text-sm opacity-70 mt-1">
           It is either going to rewrite it or correct it.
         </p>
         <button
           onClick={generating}
-          className={`bg-black text-white w-1/2 rounded-lg py-2 my-5 ${
+          className={`bg-black text-white w-full md:w-4/5 lg:w-1/2 rounded-lg py-2 my-5 ${
             loader == "Generating..." && "animate-pulse"
           }`}
         >

@@ -24,4 +24,10 @@
       transform: translateX(550%) skewX(-25deg);
     }
   }
+
+  #title {
+    background: url("../public/grammer\ ai.gif");
+    background-size: contain;
+    background-position: center;
+  }
 }

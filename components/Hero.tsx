@@ -41,13 +41,10 @@ export default function Hero({
       {/* <h1 className="mb-4 text-4xl font-black text-center md:text-6xl">
         Grammar AI
       </h1> */}
-      <Image
-        src={GrammarAI}
-        className="w-[600px]"
-        width={600}
-        height={600}
-        alt=""
-      />
+      <div
+        className="w-full max-w-[600px] aspect-logo bg-red-300"
+        id="title"
+      ></div>
       <p className="text-base font-medium text-center opacity-75 md:text-xl">
         This application makes it easy for users to improve their writing and
         avoid common mistakes.
@@ -63,7 +60,7 @@ export default function Hero({
         <div id="light"></div>
       </div>
       <textarea
-        className="w-full p-4 border-2 border-gray-500 rounded-lg outline-none focus:border-black md:w-4/5 lg:w-1/2"
+        className="w-full p-4 duration-150 border-2 border-gray-500 rounded-lg outline-none focus:border-black md:w-4/5 lg:w-1/2 active:bg-gray-200"
         value={promptValue}
         rows={5}
         onChange={(e) => setPromptValue(e.target.value)}
@@ -77,7 +74,7 @@ export default function Hero({
         onClick={generating}
         className={`bg-black text-white w-full md:w-4/5 lg:w-1/2 rounded-lg py-2 my-5 ${
           loader == "Generating..." && "animate-pulse"
-        }`}
+        } active:scale-95 duration-150`}
       >
         {loader}
       </button>

@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
 import { Inter } from "next/font/google";
-import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const inter = Inter({
   weight: ["400", "900", "600", "500"],
@@ -11,8 +10,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-import { MdOutlineContentCopy } from "react-icons/md";
-import { WHY_GRAMMAR_AI } from "@/content/Information";
+import { Hero, Navbar, Reasons, Generated } from "@/components";
 
 export default function Home() {
   const [promptValue, setPromptValue] = useState("");
@@ -51,108 +49,26 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
-        className={`${inter.className} flex flex-col items-center w-full max-w-[1200px] mx-auto p-4`}
-      >
-        <nav className="fixed top-0 left-0 z-50 w-full px-4 bg-white shadow-md">
-          <div className="w-full max-w-[1200px] mx-auto h-16 flex justify-between items-center">
-            <h1 className="text-xl font-black">Grammar AI</h1>
-            <a
-              href="https://www.alirezasamadi.com/"
-              target={"_blank"}
-              className="flex items-center gap-4 text-sm"
-            >
-              Developed by
-              <img
-                src="https://www.alirezasamadi.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMy%20Image.0e022541.png&w=256&q=75"
-                alt=""
-                className="w-10 h-10 rounded-full"
-              />
-            </a>
-          </div>
-        </nav>
-        <h1 className="mt-24 mb-4 text-4xl font-black text-center md:text-6xl">
-          Grammar AI
-        </h1>
-        <p className="mb-24 text-base font-medium text-center opacity-75 md:text-xl">
-          This application makes it easy for users to improve their writing and
-          avoid common mistakes.
-        </p>
-        <textarea
-          className="w-full p-4 border-2 border-gray-500 rounded-lg outline-none focus:border-black md:w-4/5 lg:w-1/2"
-          value={promptValue}
-          onChange={(e) => setPromptValue(e.target.value)}
-          placeholder="e.g: I okay am"
+      <main className={`${inter.className} p-4`}>
+        <Navbar />
+
+        <Hero
+          promptValue={promptValue}
+          setPromptValue={setPromptValue}
+          generating={generating}
+          loader={loader}
         />
-        <p className="w-full mt-1 text-sm md:w-4/5 lg:w-1/2 opacity-70">
-          It is either going to rewrite it or correct it.
-        </p>
-        <button
-          onClick={generating}
-          className={`bg-black text-white w-full md:w-4/5 lg:w-1/2 rounded-lg py-2 my-5 ${
-            loader == "Generating..." && "animate-pulse"
-          }`}
-        >
-          {loader}
-        </button>
 
         {generated.length !== 0 && (
-          <div className="fixed top-0 left-0 z-40 flex items-center justify-center w-full h-screen isolate">
-            <div
-              onClick={() => setGenerated("")}
-              className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-80 -z-10"
-            ></div>
-            <div className="bg-white w-full max-w-[800px] shadow-2xl p-4 rounded-lg overflow-hidden border-2 border-gray-200">
-              <h2 className="my-4 mt-6 text-2xl font-medium">Your Sentence</h2>
-              <motion.p
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                className="p-4 rounded-md bg-slate-200"
-              >
-                {promptValue}
-              </motion.p>
-              <h2 className="my-4 mt-6 text-2xl font-medium">
-                Generated Sentence
-              </h2>
-              <motion.p
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="p-4 text-white bg-black rounded-md"
-              >
-                {generated}
-              </motion.p>
-              <button
-                onClick={() => copingText(generated)}
-                className="p-4 mt-8 text-white duration-100 bg-black rounded-md focus:bg-green-700"
-              >
-                <MdOutlineContentCopy />
-              </button>
-              <Toaster />
-            </div>
-          </div>
+          <Generated
+            promptValue={promptValue}
+            generated={generated}
+            setGenerated={setGenerated}
+            copingText={copingText}
+          />
         )}
 
-        <div className="w-full pb-12">
-          <h1 className="mt-24 mb-8 text-3xl font-black md:text-4xl">
-            Why Grammar AI?
-          </h1>
-          <div className="flex flex-wrap gap-4">
-            {WHY_GRAMMAR_AI.map((reasons) => (
-              <div
-                key={reasons.reason}
-                className="basis-[300px] grow bg-gray-100 p-4 rounded-lg group hover:bg-gray-200"
-              >
-                <small className="flex items-center justify-center w-8 h-8 font-bold text-white duration-200 bg-gray-800 rounded-full group-hover:bg-black">
-                  {reasons.reason}
-                </small>
-                <h2 className="my-2 text-xl font-bold">{reasons.title}</h2>
-                <p className="opacity-90">{reasons.details}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Reasons />
       </main>
     </>
   );

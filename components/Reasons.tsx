@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import { WHY_GRAMMAR_AI } from "@/content/Information";
 import Container from "./Container";
@@ -12,8 +13,11 @@ export default function Reasons({}: Props) {
         Why Grammar AI?
       </h1>
       <div className="flex flex-wrap gap-4">
-        {WHY_GRAMMAR_AI.map((reasons) => (
-          <div
+        {WHY_GRAMMAR_AI.map((reasons, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * index }}
             key={reasons.reason}
             className="basis-[300px] grow bg-gray-100 p-4 rounded-lg group hover:bg-gray-200"
           >
@@ -22,7 +26,7 @@ export default function Reasons({}: Props) {
             </small>
             <h2 className="my-2 text-xl font-bold">{reasons.title}</h2>
             <p className="opacity-90">{reasons.details}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </Container>

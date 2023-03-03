@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -13,9 +14,11 @@ export default function Navbar({}: Props) {
           className="flex items-center gap-4 text-sm"
         >
           Developed by
-          <img
+          <Image
             src="https://www.alirezasamadi.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMy%20Image.0e022541.png&w=256&q=75"
             alt=""
+            width={40}
+            height={40}
             className="w-10 h-10 rounded-full"
           />
         </a>

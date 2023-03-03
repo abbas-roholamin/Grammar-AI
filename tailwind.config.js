@@ -10,6 +10,10 @@ module.exports = {
       aspectRatio: {
         logo: "16/5",
       },
+      transitionProperty: {
+        border: "border",
+        background: "background",
+      },
     },
   },
   plugins: [],

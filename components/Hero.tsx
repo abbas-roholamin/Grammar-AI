@@ -60,7 +60,7 @@ export default function Hero({
         <div id="light"></div>
       </div>
       <textarea
-        className="w-full p-4 duration-150 border-2 border-gray-500 rounded-lg outline-none focus:border-black md:w-4/5 lg:w-1/2 active:bg-gray-200"
+        className="w-full p-4 duration-150 border-2 border-gray-500 rounded-lg outline-none transition-border transition-bg focus:border-black md:w-4/5 lg:w-1/2 active:bg-gray-100"
         value={promptValue}
         rows={5}
         onChange={(e) => setPromptValue(e.target.value)}

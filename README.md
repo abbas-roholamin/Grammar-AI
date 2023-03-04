@@ -1,38 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/99729607/222871469-369e7fc2-3ca4-4db1-ad33-ccb170aadbc6.png" width="100px">
+    <h3>Grammar AI</h3>
+    <p>This application makes it easy for users to improve their writing and avoid common mistakes.</p>
+</div>
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```diff
+- It's easier to learn something when it is animated.
++ It's easier to learn when presented in an animated format.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Use Now: [website](https://grammar-ai.vercel.app/)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Why Grammar AI?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 1. Improving writing skills
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+By using a grammar AI website, users can improve their writing skills by learning from the suggestions and corrections provided by the tool. This can help them become better writers over time.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 2. Saving time
 
-## Learn More
+Checking grammar and spelling manually can be time-consuming, especially for longer documents. A grammar AI website can quickly scan and identify errors, saving users time and effort.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Professionalism
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Good grammar and spelling are important for professional communication. Using a grammar AI website can help ensure that emails, reports, and other documents are error-free and appear professional.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 4. Convenience
 
-## Deploy on Vercel
+A grammar AI website can be accessed from anywhere with an internet connection, making it a convenient tool for people who frequently write on the go.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Accuracy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+AI websites use advanced algorithms to identify errors, which can be more accurate than relying on human proofreading alone.
+
+### 6. Accessibility
+
+For people with disabilities or language barriers, using a grammar AI website can help them communicate more effectively by identifying and correcting errors that may be difficult to spot otherwise.
+
+## 🙏 Support
+
+Don't forget to leave a star ⭐️
+
+Powered by Nextjs, Tailwind, Vercel and OpenAI

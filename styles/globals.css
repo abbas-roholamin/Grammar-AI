@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply relative min-h-full pb-24;
+  @apply relative min-h-full pb-24 bg-gray-100;
 }
 
 @layer components {
@@ -37,5 +37,12 @@ body {
     background: url("../public/grammer\ ai.gif");
     background-size: contain;
     background-position: center;
+  }
+
+  @media (min-width: 768px) {
+    #container {
+      -webkit-clip-path: ellipse(130% 90% at 40% 5%);
+      clip-path: ellipse(130% 90% at 40% 5%);
+    }
   }
 }

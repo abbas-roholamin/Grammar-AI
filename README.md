@@ -41,4 +41,4 @@ For people with disabilities or language barriers, using a grammar AI website ca
 
 Don't forget to leave a star ⭐️
 
-Powered by Nextjs, Tailwind, Vercel and OpenAI
+<p align="center">Powered by **Nextjs**, **Tailwind**, **Vercel** and **OpenAI**</p>

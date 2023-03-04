@@ -8,7 +8,7 @@ type Props = {};
 
 export default function Reasons({}: Props) {
   return (
-    <Container className="pb-12">
+    <Container className="px-4 pb-12">
       <h1 className="mt-24 mb-8 text-3xl font-black md:text-4xl">
         Why Grammar AI?
       </h1>
@@ -19,7 +19,7 @@ export default function Reasons({}: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 * index }}
             key={reasons.reason}
-            className="basis-[300px] grow bg-gray-100 p-4 rounded-lg group hover:bg-gray-200"
+            className="basis-[300px] grow bg-gray-200 p-4 rounded-lg group hover:bg-opacity-40"
           >
             <small className="flex items-center justify-center w-8 h-8 font-bold text-white duration-200 bg-gray-800 rounded-full group-hover:bg-black">
               {reasons.reason}

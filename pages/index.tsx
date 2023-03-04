@@ -21,6 +21,8 @@ export default function Home() {
   const prompt = `I will give you a sentence, Please correct it or rewrite it to a professional manner, the following sentence is: "${promptValue}"`;
 
   const generating = async () => {
+    if (promptValue.length == 0 || loader == "Generating...") return;
+
     setLoader("Generating...");
     const res = await fetch("/api/generate", {
       method: "POST",

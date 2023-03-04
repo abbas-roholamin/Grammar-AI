@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 import { Hero, Navbar, Reasons, Generated } from "@/components";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [promptValue, setPromptValue] = useState("");
@@ -69,6 +70,7 @@ export default function Home() {
         )}
 
         <Reasons />
+        <Footer />
       </main>
     </>
   );

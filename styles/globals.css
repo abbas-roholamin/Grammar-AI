@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply h-full;
+}
+
+body {
+  @apply relative min-h-full pb-24;
+}
+
 @layer components {
   #light::after {
     content: "";

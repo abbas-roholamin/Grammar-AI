@@ -11,8 +11,6 @@ export default async function handler(
 ) {
   const { prompt } = req.body;
 
-  console.log(prompt);
-
   const payload = {
     model: "text-davinci-003",
     prompt,

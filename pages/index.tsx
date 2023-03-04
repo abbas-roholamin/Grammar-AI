@@ -22,7 +22,7 @@ export default function Home() {
 
   const generating = async () => {
     setLoader("Generating...");
-    const res = await fetch("/api/hello", {
+    const res = await fetch("/api/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
